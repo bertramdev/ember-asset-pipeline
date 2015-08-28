@@ -1,3 +1,4 @@
+var global = this;
 var module = this;
 var exports = exports || {};
 

@@ -1,21 +1,26 @@
-apply plugin: 'groovy'
-apply plugin: 'maven-publish'
-apply plugin: 'maven'
-apply plugin: 'com.jfrog.bintray'
-
-group = 'com.bertramlabs.plugins'
-version = '2.1.0'
-ext.isReleaseVersion = !version.endsWith("SNAPSHOT")
-
 buildscript {
     repositories {
         mavenLocal()
         jcenter()
     }
     dependencies {
-        classpath "com.jfrog.bintray.gradle:gradle-bintray-plugin:0.5"
+        
     }
 }
+
+plugins {
+    id "com.jfrog.bintray" version "1.2"
+}
+
+
+apply plugin: 'groovy'
+apply plugin: 'maven-publish'
+apply plugin: 'maven'
+apply plugin: 'com.jfrog.bintray'
+
+group = 'com.bertramlabs.plugins'
+version = '2.5.0'
+ext.isReleaseVersion = !version.endsWith("SNAPSHOT")
 
 
 repositories {
@@ -27,7 +32,7 @@ repositories {
 
 
 dependencies {
-	compile "com.bertramlabs.plugins:asset-pipeline-core:2.0.5"
+	compile "com.bertramlabs.plugins:asset-pipeline-core:2.5.0"
 	compile 'org.codehaus.groovy:groovy:2.0.7'
     compile 'org.mozilla:rhino:1.7R4'
     compile 'log4j:log4j:1.2.17'
