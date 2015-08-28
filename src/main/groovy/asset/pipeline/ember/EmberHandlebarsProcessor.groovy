@@ -40,14 +40,14 @@ class EmberHandlebarsProcessor extends AbstractProcessor {
 			this.precompilerMode = precompiler
 			classLoader = getClass().getClassLoader()
 
-			def handlebarsJsResource  = classLoader.getResource('asset/pipeline/handlebars/handlebars.js')
+			// def handlebarsJsResource  = classLoader.getResource('asset/pipeline/handlebars/handlebars.js')
 			def emberCompilerResource = classLoader.getResource('asset/pipeline/ember/ember-template-compiler.js')
 
 
 			Context cx = Context.enter()
 			cx.setOptimizationLevel(-1)
 			globalScope = cx.initStandardObjects()
-			cx.evaluateString globalScope, handlebarsJsResource.getText("UTF-8"), handlebarsJsResource.file, 1, null
+			// cx.evaluateString globalScope, handlebarsJsResource.getText("UTF-8"), handlebarsJsResource.file, 1, null
 			cx.evaluateString globalScope, """
 			function precompileEmberHandlebars(string) {
 				return exports.precompile(string).toString();
@@ -55,7 +55,7 @@ class EmberHandlebarsProcessor extends AbstractProcessor {
 			""", "", 1, null
 			cx.evaluateString globalScope, emberCompilerResource.getText("UTF-8"), emberCompilerResource.file, 1, null
 		} catch (Exception e) {
-			throw new Exception("Handlebars Engine initialization failed.", e)
+			throw new Exception("Ember Template Engine initialization failed.", e)
 		} finally {
 			try {
 			Context.exit()

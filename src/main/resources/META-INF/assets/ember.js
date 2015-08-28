@@ -1,1 +1,1 @@
-//= require ember/${grails.util.Environment.current == grails.util.Environment.DEVELOPMENT ? 'ember.js' : 'ember.prod.js'}
+//= require ember/${asset.pipeline.AssetPipelineConfigHolder.config?.environment == 'development' ? 'ember.js' : 'ember.prod.js'}
