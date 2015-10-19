@@ -2,6 +2,8 @@ Ember Asset-Pipeline
 =========================
 [![Build Status](https://travis-ci.org/bertramdev/ember-asset-pipeline.svg)](https://travis-ci.org/bertramdev/ember-asset-pipeline)
 
+**MOVED**: This project has moved to a sub project of the main asset-pipeline repository [http://github.com/bertramdev/asset-pipeline](http://github.com/bertramdev/asset-pipeline)
+
 Overview
 --------
 The JVM `ember-asset-pipeline` is a plugin that provides handlebars template precompiler support  for Ember.js to asset-pipeline.
